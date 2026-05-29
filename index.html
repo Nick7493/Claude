@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PerformWell Coaching — Nick Finch | Personal Trainer Southampton</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@400;600;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Tokens ─────────────────────────────────────────────── */
+    :root {
+      --black:       #0A0A0A;
+      --ebony:       #1A1A1A;
+      --ebony-mid:   #222222;
+      --ebony-light: #2E2E2E;
+      --gold:        #C9A84C;
+      --gold-bright: #E2B84A;
+      --gold-dim:    #8A6F2E;
+      --white:       #F5F0E8;   /* ebony-white */
+      --white-dim:   #B8B0A0;
+      --surface:     #141414;
+
+      --font-display: 'Inter', sans-serif;
+      --font-body:    'Montserrat', sans-serif;
+      --font-ui:      'Roboto', sans-serif;
+
+      --sp-4:  4px;
+      --sp-8:  8px;
+      --sp-12: 12px;
+      --sp-16: 16px;
+      --sp-24: 24px;
+      --sp-32: 32px;
+      --sp-48: 48px;
+      --sp-64: 64px;
+      --sp-96: 96px;
+
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+
+      --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ── Reset ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-ui);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ── Focus ──────────────────────────────────────────────── */
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ── Utility ────────────────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--sp-24); }
+    .gold  { color: var(--gold); }
+    .tag {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: var(--sp-12);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .section-sub {
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      color: var(--white-dim);
+      max-width: 560px;
+      margin-top: var(--sp-16);
+      line-height: 1.7;
+    }
+    .divider-gold {
+      width: 56px;
+      height: 4px;
+      background: var(--gold);
+      margin: var(--sp-16) 0;
+    }
+
+    /* ── Buttons ─────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-8);
+      padding: 14px 32px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: var(--radius-sm);
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+    }
+    .btn-primary:hover { background: var(--gold-bright); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.35); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white-dim);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ═══════════════════════════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════════════════════════ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: var(--sp-16) 0;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      transition: var(--transition);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-12);
+    }
+    .nav__logo-mark {
+      width: 44px;
+      height: 44px;
+      background: var(--gold);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--black);
+      letter-spacing: -0.04em;
+    }
+    .nav__logo-text {
+      line-height: 1.1;
+    }
+    .nav__logo-text strong {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .nav__logo-text span {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .nav__links {
+      display: flex;
+      gap: var(--sp-32);
+    }
+    .nav__links a {
+      font-family: var(--font-ui);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      transition: color var(--transition);
+    }
+    .nav__links a:hover { color: var(--gold); }
+    .nav__cta { display: flex; gap: var(--sp-12); }
+
+    /* ═══════════════════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--black);
+      padding-top: 80px;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 80% 50%, rgba(201,168,76,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+    }
+    .hero__grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+    .hero__inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-64);
+      align-items: center;
+      padding: var(--sp-96) 0;
+    }
+    .hero__eyebrow {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-12);
+      margin-bottom: var(--sp-24);
+    }
+    .hero__eyebrow-line {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+    }
+    .hero__eyebrow-text {
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .hero__title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .hero__title .outline {
+      -webkit-text-stroke: 2px var(--gold);
+      color: transparent;
+    }
+    .hero__title .gold-word { color: var(--gold); }
+    .hero__desc {
+      font-family: var(--font-ui);
+      font-size: 1.05rem;
+      color: var(--white-dim);
+      max-width: 480px;
+      margin-top: var(--sp-24);
+      margin-bottom: var(--sp-32);
+      line-height: 1.75;
+    }
+    .hero__actions { display: flex; gap: var(--sp-16); flex-wrap: wrap; }
+    .hero__stats {
+      display: flex;
+      gap: var(--sp-32);
+      margin-top: var(--sp-48);
+      padding-top: var(--sp-32);
+      border-top: 1px solid rgba(201,168,76,0.18);
+    }
+    .hero__stat-num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 2rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero__stat-num sup { font-size: 1rem; }
+    .hero__stat-label {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      margin-top: var(--sp-4);
+    }
+    .hero__visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero__card {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+    }
+    .hero__card-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+    }
+    .hero__card-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(160deg, var(--ebony-mid) 0%, var(--ebony-light) 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-16);
+      border: 1px solid rgba(201,168,76,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero__card-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+    }
+    .hero__card-placeholder svg {
+      width: 80px;
+      height: 80px;
+      opacity: 0.15;
+    }
+    .hero__card-placeholder p {
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      opacity: 0.5;
+    }
+    .hero__badge {
+      position: absolute;
+      bottom: -20px;
+      left: -24px;
+      background: var(--gold);
+      color: var(--black);
+      padding: var(--sp-16) var(--sp-24);
+      border-radius: var(--radius-md);
+      box-shadow: 0 16px 40px rgba(201,168,76,0.4);
+    }
+    .hero__badge-num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .hero__badge-label {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    .hero__accent-bar {
+      position: absolute;
+      top: var(--sp-32);
+      right: -12px;
+      width: 6px;
+      height: 120px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      border-radius: 3px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       LOGO STRIP
+    ═══════════════════════════════════════════════════════════ */
+    .strip {
+      background: var(--ebony);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      padding: var(--sp-24) 0;
+    }
+    .strip__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-32);
+      flex-wrap: wrap;
+    }
+    .strip__item {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      opacity: 0.45;
+      display: flex;
+      align-items: center;
+      gap: var(--sp-8);
+    }
+    .strip__dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       BENEFITS
+    ═══════════════════════════════════════════════════════════ */
+    .benefits {
+      padding: var(--sp-96) 0;
+      background: var(--black);
+    }
+    .benefits__head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-64);
+      align-items: end;
+      margin-bottom: var(--sp-64);
+    }
+    .benefits__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-24);
+    }
+    .benefit-card {
+      background: var(--ebony);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius-md);
+      padding: var(--sp-32);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .benefit-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-4px); }
+    .benefit-card:hover::before { transform: scaleX(1); }
+    .benefit-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(201,168,76,0.1);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--sp-24);
+      font-size: 1.4rem;
+    }
+    .benefit-card h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: var(--sp-12);
+    }
+    .benefit-card p {
+      font-family: var(--font-ui);
+      font-size: 0.875rem;
+      color: var(--white-dim);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════════════════════════════ */
+    .services {
+      padding: var(--sp-96) 0;
+      background: var(--surface);
+      position: relative;
+      overflow: hidden;
+    }
+    .services::before {
+      content: 'TRAIN';
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 18vw;
+      color: rgba(201,168,76,0.03);
+      letter-spacing: -0.05em;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .services__head { text-align: center; margin-bottom: var(--sp-64); }
+    .services__head .section-sub { margin: var(--sp-16) auto 0; }
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-24);
+      position: relative;
+      z-index: 2;
+    }
+    .service-card {
+      background: var(--ebony);
+      border: 1px solid rgba(201,168,76,0.08);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card:hover { transform: translateY(-6px); border-color: rgba(201,168,76,0.25); box-shadow: 0 24px 48px rgba(0,0,0,0.5); }
+    .service-card__thumb {
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+      background: var(--ebony-light);
+    }
+    .service-card__thumb-bg {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      opacity: 0.25;
+    }
+    .service-card__thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--ebony) 0%, transparent 60%);
+    }
+    .service-card__num {
+      position: absolute;
+      top: var(--sp-16);
+      left: var(--sp-16);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      background: rgba(0,0,0,0.6);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+    .service-card__body { padding: var(--sp-24); flex: 1; display: flex; flex-direction: column; }
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--white);
+      margin-bottom: var(--sp-12);
+    }
+    .service-card p {
+      font-family: var(--font-ui);
+      font-size: 0.875rem;
+      color: var(--white-dim);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .service-card__cta {
+      margin-top: var(--sp-24);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-8);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: gap var(--transition);
+    }
+    .service-card:hover .service-card__cta { gap: var(--sp-16); }
+
+    /* ═══════════════════════════════════════════════════════════
+       ABOUT / NICK
+    ═══════════════════════════════════════════════════════════ */
+    .about {
+      padding: var(--sp-96) 0;
+      background: var(--black);
+    }
+    .about__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-96);
+      align-items: center;
+    }
+    .about__visual { position: relative; }
+    .about__img-wrap {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .about__img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: linear-gradient(160deg, var(--ebony-mid), var(--ebony-light));
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-12);
+      border: 1px solid rgba(201,168,76,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .about__img-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(201,168,76,0.07) 0%, transparent 60%);
+    }
+    .about__img-placeholder svg { width: 64px; height: 64px; opacity: 0.12; }
+    .about__img-placeholder p {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      opacity: 0.4;
+    }
+    .about__corner-accent {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      width: 80px;
+      height: 80px;
+      background: var(--gold);
+      clip-path: polygon(100% 0, 100% 100%, 0 0);
+      border-radius: 0 var(--radius-md) 0 0;
+    }
+    .about__exp-badge {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      width: 120px;
+      height: 120px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 32px rgba(201,168,76,0.45);
+    }
+    .about__exp-badge strong {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: var(--black);
+      line-height: 1;
+    }
+    .about__exp-badge span {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+      opacity: 0.7;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .about__content { }
+    .about__name {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--white);
+      margin-top: var(--sp-12);
+    }
+    .about__name .gold-word { color: var(--gold); }
+    .about__bio {
+      font-family: var(--font-ui);
+      font-size: 0.95rem;
+      color: var(--white-dim);
+      line-height: 1.8;
+      margin: var(--sp-24) 0 var(--sp-32);
+    }
+    .about__certs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-8);
+      margin-bottom: var(--sp-32);
+    }
+    .cert-badge {
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 2px;
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       PROCESS
+    ═══════════════════════════════════════════════════════════ */
+    .process {
+      padding: var(--sp-96) 0;
+      background: var(--surface);
+      position: relative;
+      overflow: hidden;
+    }
+    .process__head { text-align: center; margin-bottom: var(--sp-64); }
+    .process__head .section-sub { margin: var(--sp-16) auto 0; }
+    .process__steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .process__steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+    }
+    .process-step {
+      text-align: center;
+      padding: 0 var(--sp-24);
+      position: relative;
+    }
+    .process-step__circle {
+      width: 72px;
+      height: 72px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--sp-24);
+      background: var(--surface);
+      position: relative;
+      z-index: 1;
+      transition: var(--transition);
+    }
+    .process-step:hover .process-step__circle {
+      background: var(--gold);
+    }
+    .process-step:hover .process-step__circle span {
+      color: var(--black);
+    }
+    .process-step__circle span {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--gold);
+      transition: color var(--transition);
+    }
+    .process-step h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: var(--sp-12);
+    }
+    .process-step p {
+      font-family: var(--font-ui);
+      font-size: 0.825rem;
+      color: var(--white-dim);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════════════════════════════ */
+    .testimonials {
+      padding: var(--sp-96) 0;
+      background: var(--black);
+    }
+    .testimonials__head { margin-bottom: var(--sp-64); }
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-24);
+    }
+    .testi-card {
+      background: var(--ebony);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius-md);
+      padding: var(--sp-32);
+      position: relative;
+      transition: var(--transition);
+    }
+    .testi-card:hover { border-color: rgba(201,168,76,0.3); }
+    .testi-card__quote {
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      margin-bottom: var(--sp-16);
+      opacity: 0.6;
+    }
+    .testi-card__stars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: var(--sp-16);
+    }
+    .star { color: var(--gold); font-size: 0.9rem; }
+    .testi-card p {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      color: var(--white-dim);
+      line-height: 1.75;
+      margin-bottom: var(--sp-24);
+      font-style: italic;
+    }
+    .testi-card__author {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-12);
+      padding-top: var(--sp-16);
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+    .testi-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1rem;
+      color: var(--black);
+      flex-shrink: 0;
+    }
+    .testi-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--white);
+    }
+    .testi-detail {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       PRICING
+    ═══════════════════════════════════════════════════════════ */
+    .pricing {
+      padding: var(--sp-96) 0;
+      background: var(--surface);
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing::before {
+      content: 'INVEST';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 20vw;
+      color: rgba(201,168,76,0.025);
+      letter-spacing: -0.05em;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .pricing__head { text-align: center; margin-bottom: var(--sp-64); }
+    .pricing__head .section-sub { margin: var(--sp-16) auto 0; }
+    .pricing__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-24);
+      position: relative;
+      z-index: 2;
+    }
+    .price-card {
+      background: var(--ebony);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius-md);
+      padding: var(--sp-32);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .price-card--featured {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+    .price-card--featured * { color: var(--black) !important; }
+    .price-card--featured .price-card__feature { border-color: rgba(0,0,0,0.15) !important; }
+    .price-card--featured .price-card__feature::before { background: var(--black) !important; }
+    .price-card:not(.price-card--featured):hover { transform: translateY(-6px); border-color: rgba(201,168,76,0.3); box-shadow: 0 24px 48px rgba(0,0,0,0.4); }
+    .price-badge {
+      position: absolute;
+      top: var(--sp-16);
+      right: var(--sp-16);
+      background: var(--black);
+      color: var(--gold) !important;
+      padding: 4px 10px;
+      border-radius: 2px;
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .price-card__tier {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: var(--sp-8);
+    }
+    .price-card__name {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--white);
+      margin-bottom: var(--sp-24);
+    }
+    .price-card__price {
+      display: flex;
+      align-items: flex-start;
+      gap: 4px;
+      margin-bottom: var(--sp-8);
+    }
+    .price-card__currency {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-top: 8px;
+    }
+    .price-card__amount {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 3.5rem;
+      line-height: 1;
+      color: var(--white);
+    }
+    .price-card__period {
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      color: var(--white-dim);
+      align-self: flex-end;
+      margin-bottom: var(--sp-8);
+    }
+    .price-card__desc {
+      font-family: var(--font-ui);
+      font-size: 0.825rem;
+      color: var(--white-dim);
+      margin-bottom: var(--sp-32);
+      padding-bottom: var(--sp-24);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      line-height: 1.6;
+    }
+    .price-card__features { flex: 1; margin-bottom: var(--sp-32); }
+    .price-card__feature {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-12);
+      padding: var(--sp-8) 0;
+      border-bottom: 1px solid rgba(201,168,76,0.06);
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--white-dim);
+    }
+    .price-card__feature::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: var(--gold);
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      flex-shrink: 0;
+    }
+    .price-card .btn-primary { width: 100%; justify-content: center; }
+    .btn-dark {
+      background: var(--black);
+      color: var(--gold) !important;
+      width: 100%;
+      justify-content: center;
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 32px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: var(--radius-sm);
+    }
+    .btn-dark:hover { background: rgba(0,0,0,0.7); }
+
+    /* ═══════════════════════════════════════════════════════════
+       CTA BAND
+    ═══════════════════════════════════════════════════════════ */
+    .cta-band {
+      padding: var(--sp-96) 0;
+      background: var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: 'START';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 22vw;
+      color: rgba(0,0,0,0.06);
+      letter-spacing: -0.05em;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .cta-band__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-48);
+      position: relative;
+      z-index: 2;
+    }
+    .cta-band__title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+    .cta-band__sub {
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      color: rgba(0,0,0,0.6);
+      margin-top: var(--sp-12);
+      max-width: 440px;
+    }
+    .cta-band .btn-primary {
+      background: var(--black);
+      color: var(--gold);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .cta-band .btn-primary:hover { background: #1a1a1a; }
+
+    /* ═══════════════════════════════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════════════════════════════ */
+    .contact {
+      padding: var(--sp-96) 0;
+      background: var(--black);
+    }
+    .contact__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-96);
+      align-items: start;
+    }
+    .contact__info { }
+    .contact__details { margin-top: var(--sp-32); display: flex; flex-direction: column; gap: var(--sp-24); }
+    .contact-item {
+      display: flex;
+      gap: var(--sp-16);
+      align-items: flex-start;
+    }
+    .contact-item__icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(201,168,76,0.1);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-item__label {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .contact-item__value {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--white);
+      font-weight: 600;
+    }
+    .contact-item__sub {
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      color: var(--white-dim);
+      margin-top: 2px;
+    }
+    .contact__form { }
+    .form-group { margin-bottom: var(--sp-16); }
+    .form-label {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      margin-bottom: var(--sp-8);
+    }
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      background: var(--ebony);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      color: var(--white);
+      transition: var(--transition);
+      outline: none;
+      appearance: none;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--white-dim); opacity: 0.4; }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+    }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-select option { background: var(--ebony); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-16); }
+    .contact__form .btn-primary { width: 100%; justify-content: center; margin-top: var(--sp-8); }
+
+    /* ═══════════════════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════════════════ */
+    .footer {
+      background: var(--ebony);
+      border-top: 1px solid rgba(201,168,76,0.12);
+      padding: var(--sp-64) 0 var(--sp-32);
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: var(--sp-48);
+      margin-bottom: var(--sp-48);
+    }
+    .footer__brand p {
+      font-family: var(--font-ui);
+      font-size: 0.875rem;
+      color: var(--white-dim);
+      line-height: 1.7;
+      margin-top: var(--sp-16);
+      max-width: 280px;
+    }
+    .footer__socials {
+      display: flex;
+      gap: var(--sp-12);
+      margin-top: var(--sp-24);
+    }
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--gold);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .social-btn:hover { background: var(--gold); color: var(--black); }
+    .footer__col h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: var(--sp-16);
+    }
+    .footer__col ul { display: flex; flex-direction: column; gap: var(--sp-8); }
+    .footer__col li a {
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--white-dim);
+      transition: color var(--transition);
+    }
+    .footer__col li a:hover { color: var(--gold); }
+    .footer__bottom {
+      border-top: 1px solid rgba(201,168,76,0.08);
+      padding-top: var(--sp-24);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer__copy {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      color: var(--white-dim);
+      opacity: 0.5;
+    }
+    .footer__legal {
+      display: flex;
+      gap: var(--sp-24);
+    }
+    .footer__legal a {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      color: var(--white-dim);
+      opacity: 0.5;
+      transition: opacity var(--transition);
+    }
+    .footer__legal a:hover { opacity: 1; color: var(--gold); }
+
+    /* ═══════════════════════════════════════════════════════════
+       SCROLL ANIMATIONS
+    ═══════════════════════════════════════════════════════════ */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-up {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .fade-up:nth-child(2) { transition-delay: 0.1s; }
+      .fade-up:nth-child(3) { transition-delay: 0.2s; }
+      .fade-up:nth-child(4) { transition-delay: 0.3s; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .benefits__head,
+      .benefits__grid,
+      .services__grid,
+      .testimonials__grid,
+      .pricing__grid { grid-template-columns: 1fr 1fr; }
+      .process__steps { grid-template-columns: 1fr 1fr; gap: var(--sp-48); }
+      .process__steps::before { display: none; }
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav__links, .nav__cta .btn-outline { display: none; }
+      .hero__inner,
+      .about__inner,
+      .contact__inner,
+      .cta-band__inner { grid-template-columns: 1fr; gap: var(--sp-48); }
+      .hero__visual { order: -1; }
+      .about__exp-badge { width: 90px; height: 90px; right: -12px; bottom: -12px; }
+      .benefits__head,
+      .benefits__grid,
+      .services__grid,
+      .testimonials__grid,
+      .pricing__grid,
+      .process__steps { grid-template-columns: 1fr; }
+      .footer__grid { grid-template-columns: 1fr; }
+      .footer__bottom { flex-direction: column; gap: var(--sp-12); text-align: center; }
+      .strip__inner { justify-content: center; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero__stats { flex-wrap: wrap; gap: var(--sp-16); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ──────────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="#" class="nav__logo" aria-label="PerformWell Coaching home">
+          <div class="nav__logo-mark" aria-hidden="true">PW</div>
+          <div class="nav__logo-text">
+            <strong>PerformWell</strong>
+            <span>Coaching</span>
+          </div>
+        </a>
+        <ul class="nav__links" role="list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#testimonials">Results</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav__cta">
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+          <a href="#pricing" class="btn btn-primary">Start Now</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__grid-lines" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <div class="hero__eyebrow" aria-hidden="true">
+            <div class="hero__eyebrow-line"></div>
+            <span class="hero__eyebrow-text">Southampton Personal Trainer</span>
+          </div>
+          <h1 class="hero__title" id="hero-title">
+            Build<br>
+            Your<br>
+            <span class="gold-word">Best</span><br>
+            <span class="outline">Body.</span>
+          </h1>
+          <p class="hero__desc">
+            Results-driven 1-to-1 personal training in Southampton. Whether you want to lose fat, build muscle, or transform your lifestyle — I'll build you a plan that actually works.
+          </p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn-primary">
+              Book Free Consultation
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#services" class="btn btn-outline">View Services</a>
+          </div>
+          <div class="hero__stats" role="list" aria-label="Key statistics">
+            <div role="listitem">
+              <div class="hero__stat-num">50<sup>+</sup></div>
+              <div class="hero__stat-label">Clients Transformed</div>
+            </div>
+            <div role="listitem">
+              <div class="hero__stat-num">5<sup>+</sup></div>
+              <div class="hero__stat-label">Years Experience</div>
+            </div>
+            <div role="listitem">
+              <div class="hero__stat-num">100<sup>%</sup></div>
+              <div class="hero__stat-label">Tailored Programs</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__card">
+            <div class="hero__card-placeholder">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="28" r="14" stroke="#C9A84C" stroke-width="3"/>
+                <path d="M16 72c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              <p>Your Photo Here</p>
+            </div>
+            <div class="hero__badge">
+              <div class="hero__badge-num">★ 5.0</div>
+              <div class="hero__badge-label">Client Rating</div>
+            </div>
+            <div class="hero__accent-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STRIP ─────────────────────────────────────────────── -->
+  <div class="strip" aria-hidden="true">
+    <div class="container">
+      <div class="strip__inner">
+        <div class="strip__item"><div class="strip__dot"></div>Fat Loss</div>
+        <div class="strip__item"><div class="strip__dot"></div>Muscle Building</div>
+        <div class="strip__item"><div class="strip__dot"></div>Strength Training</div>
+        <div class="strip__item"><div class="strip__dot"></div>Nutrition Coaching</div>
+        <div class="strip__item"><div class="strip__dot"></div>Online Coaching</div>
+        <div class="strip__item"><div class="strip__dot"></div>Southampton Based</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BENEFITS ──────────────────────────────────────────── -->
+  <section class="benefits" id="benefits" aria-labelledby="benefits-title">
+    <div class="container">
+      <div class="benefits__head">
+        <div>
+          <span class="tag">Why PerformWell</span>
+          <h2 class="section-title" id="benefits-title">Training<br><span class="gold">That Delivers.</span></h2>
+          <div class="divider-gold" aria-hidden="true"></div>
+        </div>
+        <div>
+          <p class="section-sub">Every program is built around you — your body, your schedule, your goals. No cookie-cutter plans, no wasted sessions.</p>
+        </div>
+      </div>
+      <div class="benefits__grid">
+        <article class="benefit-card fade-up">
+          <div class="benefit-icon" aria-hidden="true">🎯</div>
+          <h3>Goal-Focused Programming</h3>
+          <p>Every session and every meal recommendation is designed around your specific goal — fat loss, strength, or body composition.</p>
+        </article>
+        <article class="benefit-card fade-up">
+          <div class="benefit-icon" aria-hidden="true">📊</div>
+          <h3>Progress Tracking</h3>
+          <p>Regular check-ins, body composition assessments, and performance metrics keep you accountable and your program evolving.</p>
+        </article>
+        <article class="benefit-card fade-up">
+          <div class="benefit-icon" aria-hidden="true">🍽️</div>
+          <h3>Nutrition Support</h3>
+          <p>Practical nutrition guidance that fits your life — no extreme diets, just sustainable habits that fuel results.</p>
+        </article>
+        <article class="benefit-card fade-up">
+          <div class="benefit-icon" aria-hidden="true">💪</div>
+          <h3>Expert Technique Coaching</h3>
+          <p>Form and movement quality first, always. Build strength safely and reduce injury risk with proper coaching on every rep.</p>
+        </article>
+        <article class="benefit-card fade-up">
+          <div class="benefit-icon" aria-hidden="true">📱</div>
+          <h3>24/7 Support</h3>
+          <p>Questions between sessions? Direct messaging support means you're never left guessing about your training or nutrition.</p>
+        </article>
+        <article class="benefit-card fade-up">
+          <div class="benefit-icon" aria-hidden="true">📍</div>
+          <h3>Southampton Local</h3>
+          <p>Based in Southampton, training in-person across the city or online — you choose the format that works best for you.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ──────────────────────────────────────────── -->
+  <section class="services" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <div class="services__head">
+        <span class="tag">What I Offer</span>
+        <h2 class="section-title" id="services-title">Choose Your<br><span class="gold">Program.</span></h2>
+        <div class="divider-gold" style="margin: 16px auto;" aria-hidden="true"></div>
+        <p class="section-sub">Three focused service offerings, each built to deliver results whether you're in Southampton or anywhere in the UK.</p>
+      </div>
+      <div class="services__grid">
+        <article class="service-card fade-up">
+          <div class="service-card__thumb">
+            <div class="service-card__thumb-bg" aria-hidden="true">🏋️</div>
+            <div class="service-card__thumb-overlay" aria-hidden="true"></div>
+            <span class="service-card__num">01</span>
+          </div>
+          <div class="service-card__body">
+            <h3>1-to-1 Personal Training</h3>
+            <p>Fully hands-on sessions in Southampton. I coach you through every rep, correcting form, pushing intensity, and keeping you focused on what matters.</p>
+            <a href="#pricing" class="service-card__cta">
+              View Pricing
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="service-card fade-up">
+          <div class="service-card__thumb">
+            <div class="service-card__thumb-bg" aria-hidden="true">💻</div>
+            <div class="service-card__thumb-overlay" aria-hidden="true"></div>
+            <span class="service-card__num">02</span>
+          </div>
+          <div class="service-card__body">
+            <h3>Online Coaching</h3>
+            <p>Full remote coaching with custom training programs, nutrition plans, weekly check-ins, and video feedback — wherever you are in the world.</p>
+            <a href="#pricing" class="service-card__cta">
+              View Pricing
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="service-card fade-up">
+          <div class="service-card__thumb">
+            <div class="service-card__thumb-bg" aria-hidden="true">📋</div>
+            <div class="service-card__thumb-overlay" aria-hidden="true"></div>
+            <span class="service-card__num">03</span>
+          </div>
+          <div class="service-card__body">
+            <h3>Program Design</h3>
+            <p>A custom, periodised training plan built to your goals, equipment, and schedule. Perfect if you're confident training solo but want expert programming.</p>
+            <a href="#pricing" class="service-card__cta">
+              View Pricing
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ─────────────────────────────────────────────── -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about__inner">
+        <div class="about__visual fade-up" aria-hidden="true">
+          <div class="about__corner-accent"></div>
+          <div class="about__img-wrap">
+            <div class="about__img-placeholder">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="28" r="14" stroke="#C9A84C" stroke-width="3"/>
+                <path d="M16 72c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              <p>Nick's Photo</p>
+            </div>
+          </div>
+          <div class="about__exp-badge" aria-label="5 plus years experience">
+            <strong>5+</strong>
+            <span>Years Exp.</span>
+          </div>
+        </div>
+        <div class="about__content fade-up">
+          <span class="tag">Meet Your Coach</span>
+          <h2 class="about__name" id="about-title">
+            Nick<br><span class="gold-word">Finch.</span>
+          </h2>
+          <div class="divider-gold" aria-hidden="true"></div>
+          <p class="about__bio">
+            I'm Nick — a Southampton-based personal trainer with a passion for helping people transform not just their body, but their confidence, habits, and outlook on health. I believe training should be hard, smart, and above all, something you enjoy showing up for.
+          </p>
+          <p class="about__bio" style="margin-top: -12px;">
+            Whether you're a complete beginner nervous about the gym floor, or an experienced lifter who's hit a plateau — I'll cut through the noise and give you a clear, direct path to your goals.
+          </p>
+          <div class="about__certs" role="list" aria-label="Qualifications and certifications">
+            <span class="cert-badge" role="listitem">Level 3 PT</span>
+            <span class="cert-badge" role="listitem">Nutrition Cert.</span>
+            <span class="cert-badge" role="listitem">Strength & Conditioning</span>
+            <span class="cert-badge" role="listitem">First Aid</span>
+          </div>
+          <a href="#contact" class="btn btn-primary">
+            Train With Nick
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROCESS ───────────────────────────────────────────── -->
+  <section class="process" aria-labelledby="process-title">
+    <div class="container">
+      <div class="process__head">
+        <span class="tag">How It Works</span>
+        <h2 class="section-title" id="process-title">4 Steps to<br><span class="gold">Your Results.</span></h2>
+        <div class="divider-gold" style="margin: 16px auto;" aria-hidden="true"></div>
+        <p class="section-sub">A simple, structured process from first contact to achieving your goal.</p>
+      </div>
+      <div class="process__steps" role="list">
+        <div class="process-step fade-up" role="listitem">
+          <div class="process-step__circle" aria-hidden="true"><span>01</span></div>
+          <h3>Free Consultation</h3>
+          <p>We talk goals, lifestyle, training history, and what's been holding you back. No commitment, no pressure.</p>
+        </div>
+        <div class="process-step fade-up" role="listitem">
+          <div class="process-step__circle" aria-hidden="true"><span>02</span></div>
+          <h3>Custom Plan Built</h3>
+          <p>I design a full training and nutrition plan around your life — equipment, schedule, and goal all factored in.</p>
+        </div>
+        <div class="process-step fade-up" role="listitem">
+          <div class="process-step__circle" aria-hidden="true"><span>03</span></div>
+          <h3>You Start Training</h3>
+          <p>Sessions start, habits form. Weekly check-ins keep the plan sharp and your motivation locked in.</p>
+        </div>
+        <div class="process-step fade-up" role="listitem">
+          <div class="process-step__circle" aria-hidden="true"><span>04</span></div>
+          <h3>Results Delivered</h3>
+          <p>Track real progress — strength, body composition, energy, confidence. Results you can measure and feel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ──────────────────────────────────────── -->
+  <section class="testimonials" id="testimonials" aria-labelledby="testi-title">
+    <div class="container">
+      <div class="testimonials__head">
+        <span class="tag">Client Results</span>
+        <h2 class="section-title" id="testi-title">What They<br><span class="gold">Say.</span></h2>
+        <div class="divider-gold" aria-hidden="true"></div>
+      </div>
+      <div class="testimonials__grid">
+        <article class="testi-card fade-up">
+          <div class="testi-card__quote" aria-hidden="true">"</div>
+          <div class="testi-card__stars" aria-label="5 stars">
+            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+          </div>
+          <p>Nick completely changed how I approach training. Lost 14kg in 4 months and I actually enjoy going to the gym now. His programming is second to none.</p>
+          <div class="testi-card__author">
+            <div class="testi-avatar" aria-hidden="true">JM</div>
+            <div>
+              <div class="testi-name">James M.</div>
+              <div class="testi-detail">Fat Loss · 14kg Down</div>
+            </div>
+          </div>
+        </article>
+        <article class="testi-card fade-up">
+          <div class="testi-card__quote" aria-hidden="true">"</div>
+          <div class="testi-card__stars" aria-label="5 stars">
+            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+          </div>
+          <p>I'd never lifted properly before. Nick made it approachable, explained everything, and now I'm deadlifting double my bodyweight. Genuinely life-changing.</p>
+          <div class="testi-card__author">
+            <div class="testi-avatar" aria-hidden="true">SR</div>
+            <div>
+              <div class="testi-name">Sarah R.</div>
+              <div class="testi-detail">Strength · 2× Bodyweight DL</div>
+            </div>
+          </div>
+        </article>
+        <article class="testi-card fade-up">
+          <div class="testi-card__quote" aria-hidden="true">"</div>
+          <div class="testi-card__stars" aria-label="5 stars">
+            <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+          </div>
+          <p>Online coaching with Nick is brilliant. Weekly check-ins, quick responses, and the program adapts as you progress. Packed on serious muscle in 6 months.</p>
+          <div class="testi-card__author">
+            <div class="testi-avatar" aria-hidden="true">DK</div>
+            <div>
+              <div class="testi-name">Dan K.</div>
+              <div class="testi-detail">Online Coaching · Muscle Gain</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING ───────────────────────────────────────────── -->
+  <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+    <div class="container">
+      <div class="pricing__head">
+        <span class="tag">Invest in Yourself</span>
+        <h2 class="section-title" id="pricing-title">Simple,<br><span class="gold">Clear Pricing.</span></h2>
+        <div class="divider-gold" style="margin: 16px auto;" aria-hidden="true"></div>
+        <p class="section-sub">No hidden fees. No locked-in contracts. Pick the program that suits you and start today.</p>
+      </div>
+      <div class="pricing__grid">
+
+        <article class="price-card fade-up">
+          <div class="price-card__tier">Program Design</div>
+          <div class="price-card__name">Custom Plan</div>
+          <div class="price-card__price">
+            <span class="price-card__currency">£</span>
+            <span class="price-card__amount">79</span>
+            <span class="price-card__period">one-off</span>
+          </div>
+          <p class="price-card__desc">A fully personalised training program, delivered once. Perfect for self-starters who want expert structure.</p>
+          <ul class="price-card__features" role="list">
+            <li class="price-card__feature">Full periodised training plan</li>
+            <li class="price-card__feature">Equipment & schedule tailored</li>
+            <li class="price-card__feature">Exercise video library</li>
+            <li class="price-card__feature">Nutrition guidelines</li>
+            <li class="price-card__feature">1 revision round</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+        </article>
+
+        <article class="price-card price-card--featured fade-up">
+          <div class="price-badge">Most Popular</div>
+          <div class="price-card__tier">Online Coaching</div>
+          <div class="price-card__name">Remote Coaching</div>
+          <div class="price-card__price">
+            <span class="price-card__currency">£</span>
+            <span class="price-card__amount">149</span>
+            <span class="price-card__period">/month</span>
+          </div>
+          <p class="price-card__desc">Full coaching relationship — programming, nutrition, and weekly check-ins. Results without geography limits.</p>
+          <ul class="price-card__features" role="list">
+            <li class="price-card__feature">Custom training program</li>
+            <li class="price-card__feature">Nutrition & macro coaching</li>
+            <li class="price-card__feature">Weekly video check-ins</li>
+            <li class="price-card__feature">Form video feedback</li>
+            <li class="price-card__feature">Daily messaging support</li>
+            <li class="price-card__feature">Program updated monthly</li>
+          </ul>
+          <a href="#contact" class="btn btn-dark">Start Coaching</a>
+        </article>
+
+        <article class="price-card fade-up">
+          <div class="price-card__tier">In-Person · Southampton</div>
+          <div class="price-card__name">PT Sessions</div>
+          <div class="price-card__price">
+            <span class="price-card__currency">£</span>
+            <span class="price-card__amount">50</span>
+            <span class="price-card__period">/session</span>
+          </div>
+          <p class="price-card__desc">1-to-1 personal training sessions in Southampton. Hands-on coaching, real-time feedback, full accountability.</p>
+          <ul class="price-card__features" role="list">
+            <li class="price-card__feature">60-minute sessions</li>
+            <li class="price-card__feature">Initial fitness assessment</li>
+            <li class="price-card__feature">Custom session plan</li>
+            <li class="price-card__feature">Progress tracking</li>
+            <li class="price-card__feature">Nutrition guidance included</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Book a Session</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BAND ──────────────────────────────────────────── -->
+  <section class="cta-band" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title" id="cta-title">Ready to<br>Start?</h2>
+          <p class="cta-band__sub">Book a free 30-minute consultation. No sales pitch — just an honest conversation about your goals and how to reach them.</p>
+        </div>
+        <a href="#contact" class="btn btn-primary">
+          Book Free Consultation
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ───────────────────────────────────────────── -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__info">
+          <span class="tag">Get in Touch</span>
+          <h2 class="section-title" id="contact-title">Let's Talk<br><span class="gold">Goals.</span></h2>
+          <div class="divider-gold" aria-hidden="true"></div>
+          <p class="section-sub">Reach out via the form or directly. I aim to respond within 24 hours.</p>
+          <div class="contact__details">
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">📍</div>
+              <div>
+                <div class="contact-item__label">Location</div>
+                <div class="contact-item__value">Southampton, UK</div>
+                <div class="contact-item__sub">In-person &amp; online sessions available</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">📧</div>
+              <div>
+                <div class="contact-item__label">Email</div>
+                <div class="contact-item__value">nick@performwellcoaching.co.uk</div>
+                <div class="contact-item__sub">Response within 24 hours</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">📱</div>
+              <div>
+                <div class="contact-item__label">Instagram</div>
+                <div class="contact-item__value">@performwellcoaching</div>
+                <div class="contact-item__sub">DMs open — quickest response</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__form">
+          <form action="#" novalidate aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fname">First Name</label>
+                <input class="form-input" type="text" id="fname" name="fname" placeholder="Your first name" autocomplete="given-name" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lname">Last Name</label>
+                <input class="form-input" type="text" id="lname" name="lname" placeholder="Your last name" autocomplete="family-name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="goal">Primary Goal</label>
+              <select class="form-select" id="goal" name="goal">
+                <option value="" disabled selected>Select your goal</option>
+                <option value="fat-loss">Fat Loss</option>
+                <option value="muscle">Build Muscle</option>
+                <option value="strength">Increase Strength</option>
+                <option value="fitness">General Fitness</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="service">Service Interested In</label>
+              <select class="form-select" id="service" name="service">
+                <option value="" disabled selected>Select a service</option>
+                <option value="pt">1-to-1 Personal Training</option>
+                <option value="online">Online Coaching</option>
+                <option value="plan">Custom Program Design</option>
+                <option value="unsure">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Tell Me About Yourself</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Training history, goals, any injuries or limitations..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Send Message
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo" aria-label="PerformWell Coaching">
+            <div class="nav__logo-mark" aria-hidden="true">PW</div>
+            <div class="nav__logo-text">
+              <strong>PerformWell</strong>
+              <span>Coaching</span>
+            </div>
+          </a>
+          <p>Southampton-based personal training and online coaching. Real results, no fluff.</p>
+          <div class="footer__socials" aria-label="Social media links">
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="TikTok">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.89a8.18 8.18 0 0 0 4.78 1.52V7a4.85 4.85 0 0 1-1.01-.31z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">1-to-1 PT</a></li>
+            <li><a href="#services">Online Coaching</a></li>
+            <li><a href="#services">Program Design</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Nick</a></li>
+            <li><a href="#testimonials">Client Results</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Free Consultation</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:nick@performwellcoaching.co.uk">Email Nick</a></li>
+            <li><a href="#">Instagram DM</a></li>
+            <li><a href="#">Southampton, UK</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 PerformWell Coaching — Nick Finch. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── SCROLL ANIMATION JS ──────────────────────────────── -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Nav scroll shrink
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav.style.padding = window.scrollY > 60 ? '10px 0' : '16px 0';
+    }, { passive: true });
+  </script>
+</body>
+</html>
