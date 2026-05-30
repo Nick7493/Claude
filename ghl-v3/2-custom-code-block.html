@@ -1,0 +1,508 @@
+
+<!-- ── NAV ── -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 border-b border-white/5" style="background:rgba(18,20,20,0.97);backdrop-filter:blur(12px);">
+  <div class="w-full max-w-7xl mx-auto flex items-center justify-between px-5 md:px-10 py-3">
+
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2 shrink-0">
+      <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/6a1ab95b5a3e6e89b6f492fd.png"
+           alt="PerformWell Coaching" style="height:40px;width:auto;"/>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-7">
+      <a href="#services" class="text-on-surface-variant hover:text-primary transition-colors" style="font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.12em;font-weight:700;text-transform:uppercase;">Services</a>
+      <a href="#results"  class="text-on-surface-variant hover:text-primary transition-colors" style="font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.12em;font-weight:700;text-transform:uppercase;">Results</a>
+      <a href="#about"   class="text-on-surface-variant hover:text-primary transition-colors" style="font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.12em;font-weight:700;text-transform:uppercase;">About</a>
+      <a href="#contact" class="text-on-surface-variant hover:text-primary transition-colors" style="font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.12em;font-weight:700;text-transform:uppercase;">Contact</a>
+    </nav>
+
+    <!-- CTA + hamburger -->
+    <div class="flex items-center gap-3">
+      <a href="#contact" class="hidden sm:inline-block bg-primary-container text-on-primary font-bold uppercase tracking-widest px-5 py-2.5 hover:bg-primary-fixed-dim transition-colors" style="font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.12em;">
+        Free Consult
+      </a>
+      <button id="nav-toggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu">
+        <span class="block w-6 h-0.5 bg-on-surface"></span>
+        <span class="block w-6 h-0.5 bg-on-surface"></span>
+        <span class="block w-4 h-0.5 bg-on-surface"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="flex-col gap-0 border-t border-white/5 md:hidden" style="background:#0c0f0f;">
+    <a href="#services" class="px-5 py-4 text-on-surface-variant hover:text-primary border-b border-white/5 block" style="font-family:'Roboto',sans-serif;font-size:12px;letter-spacing:0.12em;font-weight:700;text-transform:uppercase;" onclick="closeMobileMenu()">Services</a>
+    <a href="#results"  class="px-5 py-4 text-on-surface-variant hover:text-primary border-b border-white/5 block" style="font-family:'Roboto',sans-serif;font-size:12px;letter-spacing:0.12em;font-weight:700;text-transform:uppercase;" onclick="closeMobileMenu()">Results</a>
+    <a href="#about"   class="px-5 py-4 text-on-surface-variant hover:text-primary border-b border-white/5 block" style="font-family:'Roboto',sans-serif;font-size:12px;letter-spacing:0.12em;font-weight:700;text-transform:uppercase;" onclick="closeMobileMenu()">About</a>
+    <a href="#contact" class="px-5 py-4 text-on-surface-variant hover:text-primary border-b border-white/5 block" style="font-family:'Roboto',sans-serif;font-size:12px;letter-spacing:0.12em;font-weight:700;text-transform:uppercase;" onclick="closeMobileMenu()">Contact</a>
+    <a href="#contact" class="mx-5 my-4 block bg-primary-container text-on-primary font-bold text-center py-3 uppercase tracking-widest" style="font-family:'Roboto',sans-serif;font-size:11px;" onclick="closeMobileMenu()">Book Free Consultation</a>
+  </div>
+</header>
+
+<main style="padding-top:64px;">
+
+  <!-- ── HERO ── -->
+  <section id="hero" class="relative flex items-center" style="min-height:calc(100vh - 64px);overflow:hidden;">
+    <!-- BG image -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/6a1ab9bf5a3e6e89b6f4962d.png"
+           alt="" class="w-full h-full object-cover object-top" style="object-position:top center;"/>
+      <div class="absolute inset-0" style="background:linear-gradient(90deg,rgba(12,15,15,0.97) 0%,rgba(12,15,15,0.85) 55%,rgba(12,15,15,0.35) 100%);"></div>
+      <div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 60%,rgba(18,20,20,1) 100%);"></div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-10 py-16">
+      <div class="max-w-xl">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 border border-primary-fixed-dim/40 px-3 py-1.5 mb-6 rounded-full" style="background:rgba(235,194,70,0.08);">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+          <span style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.18em;font-weight:700;color:#ebc246;text-transform:uppercase;">Southampton Personal Training</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="uppercase leading-none mb-6" style="font-family:'Inter',sans-serif;font-size:clamp(2.4rem,7vw,5rem);font-weight:900;letter-spacing:-0.03em;line-height:0.95;">
+          Build The<br/>
+          Body You<br/>
+          <span class="text-stroke-gold">Deserve.</span>
+        </h1>
+
+        <p class="mb-8 text-on-surface-variant" style="font-family:'Montserrat',sans-serif;font-size:clamp(15px,2vw,18px);line-height:1.7;max-width:440px;">
+          Science-backed 1-to-1 personal training and online coaching in Southampton. Real programmes. Real accountability. Real results — with Nick Finch.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#contact" class="bg-primary-container text-on-primary font-bold uppercase text-center px-8 py-4 hover:bg-primary-fixed-dim transition-colors" style="font-family:'Roboto',sans-serif;font-size:12px;letter-spacing:0.14em;">
+            Book Free 20-Min Consult
+          </a>
+          <a href="#services" class="border border-primary-fixed-dim text-primary font-bold uppercase text-center px-8 py-4 hover:bg-primary/10 transition-colors" style="font-family:'Roboto',sans-serif;font-size:12px;letter-spacing:0.14em;">
+            View Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS BAR ── -->
+  <div class="border-y border-outline-variant/20" style="background:#0c0f0f;">
+    <div class="w-full max-w-7xl mx-auto px-5 md:px-10 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0">
+      <div class="flex flex-col items-center md:items-start md:border-r border-outline-variant/20 md:pr-8">
+        <span style="font-family:'Inter',sans-serif;font-size:2.4rem;font-weight:800;color:#ebc246;line-height:1;">50+</span>
+        <span style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.14em;font-weight:700;text-transform:uppercase;color:#d0c5af;opacity:0.7;margin-top:4px;">Happy Clients</span>
+      </div>
+      <div class="flex flex-col items-center md:items-start md:border-r border-outline-variant/20 md:px-8">
+        <span style="font-family:'Inter',sans-serif;font-size:2.4rem;font-weight:800;color:#ebc246;line-height:1;">5+</span>
+        <span style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.14em;font-weight:700;text-transform:uppercase;color:#d0c5af;opacity:0.7;margin-top:4px;">Years Coaching</span>
+      </div>
+      <div class="flex flex-col items-center md:items-start md:border-r border-outline-variant/20 md:px-8">
+        <span style="font-family:'Inter',sans-serif;font-size:2.4rem;font-weight:800;color:#ebc246;line-height:1;">100%</span>
+        <span style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.14em;font-weight:700;text-transform:uppercase;color:#d0c5af;opacity:0.7;margin-top:4px;">Tailored Approach</span>
+      </div>
+      <div class="flex flex-col items-center md:items-start md:pl-8">
+        <span style="font-family:'Inter',sans-serif;font-size:2.4rem;font-weight:800;color:#ebc246;line-height:1;">0%</span>
+        <span style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.14em;font-weight:700;text-transform:uppercase;color:#d0c5af;opacity:0.7;margin-top:4px;">Guesswork</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MARQUEE ── -->
+  <div class="overflow-hidden py-3 border-b border-outline-variant/10" style="background:#f2c94c;">
+    <div class="marquee-track">
+      <!-- Two copies for seamless loop -->
+      <template id="marquee-content">
+        <span style="font-family:'Roboto',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#241a00;white-space:nowrap;padding:0 24px;">1-TO-1 PERSONAL TRAINING</span>
+        <span style="color:#3d2f00;padding:0 8px;">★</span>
+        <span style="font-family:'Roboto',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#241a00;white-space:nowrap;padding:0 24px;">ONLINE COACHING</span>
+        <span style="color:#3d2f00;padding:0 8px;">★</span>
+        <span style="font-family:'Roboto',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#241a00;white-space:nowrap;padding:0 24px;">BESPOKE PROGRAMMES</span>
+        <span style="color:#3d2f00;padding:0 8px;">★</span>
+        <span style="font-family:'Roboto',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#241a00;white-space:nowrap;padding:0 24px;">SOUTHAMPTON &amp; ONLINE</span>
+        <span style="color:#3d2f00;padding:0 8px;">★</span>
+        <span style="font-family:'Roboto',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#241a00;white-space:nowrap;padding:0 24px;">NICK FINCH — PERFORMWELL COACHING</span>
+        <span style="color:#3d2f00;padding:0 8px;">★</span>
+        <span style="font-family:'Roboto',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#241a00;white-space:nowrap;padding:0 24px;">FAT LOSS · MUSCLE BUILDING · STRENGTH</span>
+        <span style="color:#3d2f00;padding:0 8px;">★</span>
+      </template>
+    </div>
+  </div>
+
+  <!-- ── RESULTS / TRANSFORMATIONS ── -->
+  <section id="results" style="background:#121414;padding:80px 0;">
+    <div class="w-full max-w-7xl mx-auto px-5 md:px-10">
+      <div class="reveal text-center mb-12">
+        <span style="font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.2em;font-weight:700;color:#ebc246;text-transform:uppercase;">Client Transformations</span>
+        <h2 class="uppercase mt-3" style="font-family:'Inter',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;letter-spacing:-0.02em;">
+          Real Results. <span style="color:#ebc246;">No Fluff.</span>
+        </h2>
+        <div class="gold-bar mx-auto mt-4"></div>
+      </div>
+
+      <!-- 3-col on mobile, 4-col md, 6-col lg -->
+      <div class="reveal grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3">
+        <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/d637f296-89cf-4aec-9168-5133f0a87c24.png" alt="Transformation 1"  class="tf-img rounded"/>
+        <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/e635588c-1cfd-4065-a074-a3a76e0fc835.png" alt="Transformation 2"  class="tf-img rounded"/>
+        <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/2ece1b03-bc21-4370-9fb2-c5853d181294.png" alt="Transformation 3"  class="tf-img rounded"/>
+        <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/e11722af-f821-487e-bcc1-9c048d3da8bb.png" alt="Transformation 4"  class="tf-img rounded"/>
+        <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/1ccb595b-7edd-4232-a7bc-0343da40c29b.png" alt="Transformation 5"  class="tf-img rounded"/>
+        <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/988c6a79-4961-4cdb-9f5d-10544b3e77c9.png" alt="Transformation 6"  class="tf-img rounded"/>
+        <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/8cccefd3-cd23-42c1-a1d8-290d11dc39eb.png" alt="Transformation 7"  class="tf-img rounded"/>
+        <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/a6423ebc-923a-4f99-a933-879888b47d3a.png" alt="Transformation 8"  class="tf-img rounded"/>
+        <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/f98a9923-8e01-456a-ae57-c2efb5be2e0d.png" alt="Transformation 9"  class="tf-img rounded"/>
+        <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/00692f68-1132-4d8a-9942-d14a51519a13.png" alt="Transformation 10" class="tf-img rounded"/>
+        <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/8737197f-a77b-4cb6-917e-8ef4f0ecbb2c.png" alt="Transformation 11" class="tf-img rounded"/>
+        <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/ab9bf4fc-33f8-49d2-8f1a-d34c5ffff2e0.png" alt="Transformation 12" class="tf-img rounded"/>
+      </div>
+
+      <p class="reveal text-center mt-6" style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.14em;color:#d0c5af;opacity:0.5;text-transform:uppercase;">Hover each photo to see colour · All results from real PerformWell clients</p>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section id="services" style="background:#0c0f0f;padding:80px 0;border-top:1px solid rgba(77,70,53,0.3);">
+    <div class="w-full max-w-7xl mx-auto px-5 md:px-10">
+
+      <div class="reveal mb-14 border-l-4 border-primary-fixed-dim pl-6">
+        <span style="font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.2em;font-weight:700;color:#ebc246;text-transform:uppercase;display:block;margin-bottom:8px;">Choose Your Path</span>
+        <h2 class="uppercase" style="font-family:'Inter',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;letter-spacing:-0.02em;">
+          Training<br/><span style="color:#ebc246;">Services.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <!-- 1-to-1 PT -->
+        <div class="reveal card-hover p-8 border border-outline-variant/20 flex flex-col" style="background:#1a1c1c;">
+          <span class="material-symbols-outlined mb-5" style="font-size:40px;color:#ebc246;font-variation-settings:'FILL' 1;">sports_gymnastics</span>
+          <h3 class="uppercase mb-3" style="font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:900;letter-spacing:-0.01em;">1-to-1 PT</h3>
+          <p class="text-on-surface-variant mb-6 flex-1" style="font-size:14px;line-height:1.7;">In-person sessions at a Southampton gym. Fully coached technique, progressive overload, and direct accountability every session.</p>
+          <ul class="space-y-2.5 mb-8">
+            <li class="flex items-center gap-2" style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.12em;font-weight:700;color:#ebc246;text-transform:uppercase;">
+              <span class="material-symbols-outlined" style="font-size:14px;">check_circle</span> Bespoke programme design
+            </li>
+            <li class="flex items-center gap-2" style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.12em;font-weight:700;color:#ebc246;text-transform:uppercase;">
+              <span class="material-symbols-outlined" style="font-size:14px;">check_circle</span> In-person Southampton
+            </li>
+            <li class="flex items-center gap-2" style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.12em;font-weight:700;color:#ebc246;text-transform:uppercase;">
+              <span class="material-symbols-outlined" style="font-size:14px;">check_circle</span> Nutrition support
+            </li>
+          </ul>
+          <a href="#contact" class="block text-center border border-primary-fixed-dim text-primary font-bold uppercase py-3.5 hover:bg-primary/10 transition-colors" style="font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.14em;">Enquire Now</a>
+        </div>
+
+        <!-- Online Coaching — featured -->
+        <div class="reveal card-hover p-8 border-2 border-primary-fixed-dim flex flex-col relative" style="background:#1e2020;box-shadow:0 0 40px rgba(235,194,70,0.12);">
+          <div class="absolute top-0 right-0 px-4 py-1.5" style="background:#f2c94c;font-family:'Roboto',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.14em;color:#241a00;text-transform:uppercase;">Most Popular</div>
+          <span class="material-symbols-outlined mb-5" style="font-size:40px;color:#ebc246;font-variation-settings:'FILL' 1;">laptop_mac</span>
+          <h3 class="uppercase mb-3" style="font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:900;letter-spacing:-0.01em;color:#ebc246;">Online Coaching</h3>
+          <p class="text-on-surface mb-6 flex-1" style="font-size:14px;line-height:1.7;">Train anywhere. Full programming, weekly video check-ins, 24/7 WhatsApp access, and nutrition coaching — the full PT experience without location limits.</p>
+          <ul class="space-y-2.5 mb-8">
+            <li class="flex items-center gap-2" style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.12em;font-weight:700;color:#e2e2e2;text-transform:uppercase;">
+              <span class="material-symbols-outlined" style="font-size:14px;color:#ebc246;">check_circle</span> Train from anywhere
+            </li>
+            <li class="flex items-center gap-2" style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.12em;font-weight:700;color:#e2e2e2;text-transform:uppercase;">
+              <span class="material-symbols-outlined" style="font-size:14px;color:#ebc246;">check_circle</span> Weekly video form reviews
+            </li>
+            <li class="flex items-center gap-2" style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.12em;font-weight:700;color:#e2e2e2;text-transform:uppercase;">
+              <span class="material-symbols-outlined" style="font-size:14px;color:#ebc246;">check_circle</span> 24/7 WhatsApp support
+            </li>
+            <li class="flex items-center gap-2" style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.12em;font-weight:700;color:#e2e2e2;text-transform:uppercase;">
+              <span class="material-symbols-outlined" style="font-size:14px;color:#ebc246;">check_circle</span> Full nutrition coaching
+            </li>
+          </ul>
+          <a href="#contact" class="block text-center font-bold uppercase py-3.5 hover:opacity-90 transition-opacity" style="background:#f2c94c;color:#241a00;font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.14em;">Get Started Online</a>
+        </div>
+
+        <!-- Programme Design -->
+        <div class="reveal card-hover p-8 border border-outline-variant/20 flex flex-col" style="background:#1a1c1c;">
+          <span class="material-symbols-outlined mb-5" style="font-size:40px;color:#ebc246;font-variation-settings:'FILL' 1;">edit_document</span>
+          <h3 class="uppercase mb-3" style="font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:900;letter-spacing:-0.01em;">Programme Design</h3>
+          <p class="text-on-surface-variant mb-6 flex-1" style="font-size:14px;line-height:1.7;">A fully custom training programme written for your goals, equipment, and schedule — yours to follow independently at a one-off cost.</p>
+          <ul class="space-y-2.5 mb-8">
+            <li class="flex items-center gap-2" style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.12em;font-weight:700;color:#ebc246;text-transform:uppercase;">
+              <span class="material-symbols-outlined" style="font-size:14px;">check_circle</span> One-off investment
+            </li>
+            <li class="flex items-center gap-2" style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.12em;font-weight:700;color:#ebc246;text-transform:uppercase;">
+              <span class="material-symbols-outlined" style="font-size:14px;">check_circle</span> Any goal or equipment
+            </li>
+            <li class="flex items-center gap-2" style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.12em;font-weight:700;color:#ebc246;text-transform:uppercase;">
+              <span class="material-symbols-outlined" style="font-size:14px;">check_circle</span> Detailed exercise notes
+            </li>
+          </ul>
+          <a href="#contact" class="block text-center border border-primary-fixed-dim text-primary font-bold uppercase py-3.5 hover:bg-primary/10 transition-colors" style="font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.14em;">Enquire Now</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT YOU GET ── -->
+  <section style="background:#121414;padding:80px 0;border-top:1px solid rgba(77,70,53,0.2);">
+    <div class="w-full max-w-7xl mx-auto px-5 md:px-10">
+      <div class="reveal text-center mb-12">
+        <span style="font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.2em;font-weight:700;color:#ebc246;text-transform:uppercase;">The Method</span>
+        <h2 class="uppercase mt-3" style="font-family:'Inter',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;letter-spacing:-0.02em;">
+          Your Performance, <span style="color:#ebc246;">Elevated.</span>
+        </h2>
+        <div class="gold-bar mx-auto mt-4"></div>
+      </div>
+
+      <div class="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="p-6 border border-outline-variant/20 card-hover" style="background:#1a1c1c;">
+          <span class="material-symbols-outlined mb-3 block" style="font-size:32px;color:#ebc246;font-variation-settings:'FILL' 1;">smartphone</span>
+          <h4 class="uppercase mb-2" style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;">Training App</h4>
+          <p class="text-on-surface-variant" style="font-size:13px;line-height:1.6;">Every set, rep, and PB tracked. Your programme always at your fingertips.</p>
+        </div>
+        <div class="p-6 border border-outline-variant/20 card-hover" style="background:#1a1c1c;">
+          <span class="material-symbols-outlined mb-3 block" style="font-size:32px;color:#ebc246;font-variation-settings:'FILL' 1;">videocam</span>
+          <h4 class="uppercase mb-2" style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;">Video Check-ins</h4>
+          <p class="text-on-surface-variant" style="font-size:13px;line-height:1.6;">Weekly video form reviews and check-ins to keep your technique and mindset sharp.</p>
+        </div>
+        <div class="p-6 border border-outline-variant/20 card-hover" style="background:#1a1c1c;">
+          <span class="material-symbols-outlined mb-3 block" style="font-size:32px;color:#ebc246;font-variation-settings:'FILL' 1;">forum</span>
+          <h4 class="uppercase mb-2" style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;">24/7 Support</h4>
+          <p class="text-on-surface-variant" style="font-size:13px;line-height:1.6;">Direct WhatsApp access. Questions answered fast, never left guessing.</p>
+        </div>
+        <div class="p-6 border border-outline-variant/20 card-hover" style="background:#1a1c1c;">
+          <span class="material-symbols-outlined mb-3 block" style="font-size:32px;color:#ebc246;font-variation-settings:'FILL' 1;">restaurant</span>
+          <h4 class="uppercase mb-2" style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;">Nutrition Coaching</h4>
+          <p class="text-on-surface-variant" style="font-size:13px;line-height:1.6;">Practical nutrition guidance that works with your lifestyle — no rigid meal plans.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about" style="background:#0c0f0f;padding:80px 0;border-top:1px solid rgba(77,70,53,0.3);">
+    <div class="w-full max-w-7xl mx-auto px-5 md:px-10">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+
+        <!-- Photo -->
+        <div class="reveal w-full lg:w-5/12 shrink-0">
+          <div class="relative" style="max-width:480px;margin:0 auto;">
+            <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/6a1ab9bf5a3e6e89b6f4962d.png"
+                 alt="Nick Finch — PerformWell Coaching"
+                 class="w-full object-cover object-top"
+                 style="aspect-ratio:3/4;border:1px solid rgba(77,70,53,0.3);"/>
+            <!-- Gold corner accents -->
+            <div class="absolute top-0 left-0 w-10 h-10 border-t-4 border-l-4" style="border-color:#ebc246;"></div>
+            <div class="absolute bottom-0 right-0 w-10 h-10 border-b-4 border-r-4" style="border-color:#ebc246;"></div>
+          </div>
+        </div>
+
+        <!-- Copy -->
+        <div class="reveal w-full lg:w-7/12">
+          <span style="font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.2em;font-weight:700;color:#ebc246;text-transform:uppercase;display:block;margin-bottom:12px;">Your Coach</span>
+          <h2 class="uppercase mb-5" style="font-family:'Inter',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;letter-spacing:-0.02em;">
+            Hi, I'm <span style="color:#ebc246;">Nick Finch.</span>
+          </h2>
+          <div class="gold-bar mb-7"></div>
+          <p class="text-on-surface-variant mb-5" style="font-size:16px;line-height:1.8;">
+            I'm a Southampton-based personal trainer and online coach passionate about helping real people get real results — whether that's losing fat, building muscle, getting stronger, or simply feeling better in your body every day.
+          </p>
+          <p class="text-on-surface-variant mb-8" style="font-size:15px;line-height:1.8;opacity:0.85;">
+            I take the time to understand you — your lifestyle, your history, your goals — and build a plan that actually works for how you live, not a generic template off the internet. Every programme is progressive, every check-in matters, every client gets my full attention.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+            <div class="p-4 border border-outline-variant/20" style="background:#1a1c1c;">
+              <div style="font-family:'Roboto',sans-serif;font-size:9px;letter-spacing:0.14em;font-weight:700;color:#ebc246;text-transform:uppercase;margin-bottom:4px;">Qualified</div>
+              <div style="font-size:13px;font-weight:600;">Level 3 PT</div>
+            </div>
+            <div class="p-4 border border-outline-variant/20" style="background:#1a1c1c;">
+              <div style="font-family:'Roboto',sans-serif;font-size:9px;letter-spacing:0.14em;font-weight:700;color:#ebc246;text-transform:uppercase;margin-bottom:4px;">Location</div>
+              <div style="font-size:13px;font-weight:600;">Southampton</div>
+            </div>
+            <div class="p-4 border border-outline-variant/20" style="background:#1a1c1c;">
+              <div style="font-family:'Roboto',sans-serif;font-size:9px;letter-spacing:0.14em;font-weight:700;color:#ebc246;text-transform:uppercase;margin-bottom:4px;">Speciality</div>
+              <div style="font-size:13px;font-weight:600;">Recomposition</div>
+            </div>
+            <div class="p-4 border border-outline-variant/20" style="background:#1a1c1c;">
+              <div style="font-family:'Roboto',sans-serif;font-size:9px;letter-spacing:0.14em;font-weight:700;color:#ebc246;text-transform:uppercase;margin-bottom:4px;">Available</div>
+              <div style="font-size:13px;font-weight:600;">In-person &amp; Online</div>
+            </div>
+          </div>
+
+          <a href="#contact" class="inline-block font-bold uppercase px-8 py-4 hover:opacity-90 transition-opacity" style="background:#f2c94c;color:#241a00;font-family:'Roboto',sans-serif;font-size:12px;letter-spacing:0.14em;">
+            Work With Me →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROCESS ── -->
+  <section style="background:#121414;padding:80px 0;border-top:1px solid rgba(77,70,53,0.2);">
+    <div class="w-full max-w-7xl mx-auto px-5 md:px-10">
+      <div class="reveal text-center mb-12">
+        <span style="font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.2em;font-weight:700;color:#ebc246;text-transform:uppercase;">The Process</span>
+        <h2 class="uppercase mt-3" style="font-family:'Inter',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;letter-spacing:-0.02em;">
+          How It <span style="color:#ebc246;">Works.</span>
+        </h2>
+        <div class="gold-bar mx-auto mt-4"></div>
+      </div>
+
+      <div class="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="relative">
+          <div style="font-family:'Inter',sans-serif;font-size:80px;font-weight:900;color:rgba(235,194,70,0.1);line-height:1;margin-bottom:-8px;">01</div>
+          <h3 class="uppercase mb-2" style="font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:800;">Free Call</h3>
+          <p class="text-on-surface-variant" style="font-size:14px;line-height:1.7;">20-minute consultation — we talk goals, history, and whether we're a good fit. Zero pressure.</p>
+        </div>
+        <div>
+          <div style="font-family:'Inter',sans-serif;font-size:80px;font-weight:900;color:rgba(235,194,70,0.1);line-height:1;margin-bottom:-8px;">02</div>
+          <h3 class="uppercase mb-2" style="font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:800;">Your Plan</h3>
+          <p class="text-on-surface-variant" style="font-size:14px;line-height:1.7;">I build your fully personalised programme and nutrition strategy around your life.</p>
+        </div>
+        <div>
+          <div style="font-family:'Inter',sans-serif;font-size:80px;font-weight:900;color:rgba(235,194,70,0.1);line-height:1;margin-bottom:-8px;">03</div>
+          <h3 class="uppercase mb-2" style="font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:800;">Get To Work</h3>
+          <p class="text-on-surface-variant" style="font-size:14px;line-height:1.7;">We train hard, track progress, and adjust as you evolve. No guesswork — just results.</p>
+        </div>
+        <div>
+          <div style="font-family:'Inter',sans-serif;font-size:80px;font-weight:900;color:rgba(235,194,70,0.1);line-height:1;margin-bottom:-8px;">04</div>
+          <h3 class="uppercase mb-2" style="font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:800;color:#ebc246;">Transform</h3>
+          <p class="text-on-surface-variant" style="font-size:14px;line-height:1.7;">Build lasting habits and leave with the knowledge to maintain your results for life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BAND ── -->
+  <section style="background:#f2c94c;padding:64px 20px;text-align:center;">
+    <div class="w-full max-w-3xl mx-auto">
+      <h2 class="uppercase mb-3" style="font-family:'Inter',sans-serif;font-size:clamp(1.6rem,4vw,2.8rem);font-weight:900;color:#241a00;letter-spacing:-0.02em;">
+        Ready to Start?
+      </h2>
+      <p style="font-family:'Montserrat',sans-serif;font-size:16px;color:#3d2f00;margin-bottom:24px;line-height:1.6;">
+        Limited spaces available. Book your free 20-minute strategy call and let's build a plan around your goals.
+      </p>
+      <a href="#contact" class="inline-block font-bold uppercase px-10 py-4 hover:opacity-90 transition-opacity" style="background:#241a00;color:#f2c94c;font-family:'Roboto',sans-serif;font-size:12px;letter-spacing:0.16em;">
+        Book Free Consultation →
+      </a>
+    </div>
+  </section>
+
+  <!-- ── CONTACT + GHL FORM ── -->
+  <section id="contact" style="background:#0c0f0f;padding:80px 0;border-top:1px solid rgba(77,70,53,0.3);">
+    <div class="w-full max-w-7xl mx-auto px-5 md:px-10">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+
+        <!-- Left: info -->
+        <div class="reveal w-full lg:w-5/12 shrink-0">
+          <span style="font-family:'Roboto',sans-serif;font-size:11px;letter-spacing:0.2em;font-weight:700;color:#ebc246;text-transform:uppercase;display:block;margin-bottom:12px;">Get In Touch</span>
+          <h2 class="uppercase mb-5" style="font-family:'Inter',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;letter-spacing:-0.02em;">
+            Let's Talk<br/><span style="color:#ebc246;">Goals.</span>
+          </h2>
+          <div class="gold-bar mb-7"></div>
+          <p class="text-on-surface-variant mb-8" style="font-size:15px;line-height:1.8;">
+            Fill in the form and I'll get back to you within 24 hours. Or reach out directly — DMs always open.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 p-5 border border-outline-variant/20" style="background:#1a1c1c;">
+              <span class="material-symbols-outlined shrink-0" style="color:#ebc246;font-variation-settings:'FILL' 1;margin-top:2px;">location_on</span>
+              <div>
+                <div style="font-family:'Roboto',sans-serif;font-size:9px;letter-spacing:0.14em;font-weight:700;color:#ebc246;text-transform:uppercase;margin-bottom:3px;">Location</div>
+                <div style="font-size:14px;font-weight:600;">Southampton, UK</div>
+                <div style="font-size:12px;color:#d0c5af;opacity:0.7;margin-top:2px;">In-person &amp; online available</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-5 border border-outline-variant/20" style="background:#1a1c1c;">
+              <span class="material-symbols-outlined shrink-0" style="color:#ebc246;font-variation-settings:'FILL' 1;margin-top:2px;">mail</span>
+              <div>
+                <div style="font-family:'Roboto',sans-serif;font-size:9px;letter-spacing:0.14em;font-weight:700;color:#ebc246;text-transform:uppercase;margin-bottom:3px;">Email</div>
+                <div style="font-size:14px;font-weight:600;">nick@performwellcoaching.co.uk</div>
+                <div style="font-size:12px;color:#d0c5af;opacity:0.7;margin-top:2px;">Response within 24 hours</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-5 border border-outline-variant/20" style="background:#1a1c1c;">
+              <span class="material-symbols-outlined shrink-0" style="color:#ebc246;font-variation-settings:'FILL' 1;margin-top:2px;">photo_camera</span>
+              <div>
+                <div style="font-family:'Roboto',sans-serif;font-size:9px;letter-spacing:0.14em;font-weight:700;color:#ebc246;text-transform:uppercase;margin-bottom:3px;">Instagram</div>
+                <div style="font-size:14px;font-weight:600;">@performwellcoaching</div>
+                <div style="font-size:12px;color:#d0c5af;opacity:0.7;margin-top:2px;">DMs open — quickest response</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: GHL form -->
+        <div class="reveal w-full lg:w-7/12">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/SAM86vqM7JqKIrNg5C0B"
+            style="width:100%;min-height:680px;border:none;background:transparent;display:block;"
+            id="inline-SAM86vqM7JqKIrNg5C0B"
+            title="PerformWell Coaching Enquiry Form"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-activation-type="alwaysActivated"
+            data-deactivation-type="neverDeactivate"
+            data-form-name="PerformWell Coaching Enquiry"
+            data-height="680"
+            data-layout-iframe-id="inline-SAM86vqM7JqKIrNg5C0B"
+            data-form-id="SAM86vqM7JqKIrNg5C0B">
+          </iframe>
+          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer style="background:#0c0f0f;border-top:1px solid rgba(77,70,53,0.2);padding:48px 20px;">
+  <div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+    <img src="https://assets.cdn.filesafe.space/bc5U47n25BujupIGHBQ3/media/6a1ab95b5a3e6e89b6f492fd.png"
+         alt="PerformWell Coaching" style="height:36px;width:auto;opacity:0.85;"/>
+    <nav class="flex flex-wrap justify-center gap-6">
+      <a href="#services" style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.14em;font-weight:700;text-transform:uppercase;color:#d0c5af;opacity:0.7;" class="hover:opacity-100 hover:text-primary transition-opacity">Services</a>
+      <a href="#results"  style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.14em;font-weight:700;text-transform:uppercase;color:#d0c5af;opacity:0.7;" class="hover:opacity-100 hover:text-primary transition-opacity">Results</a>
+      <a href="#about"   style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.14em;font-weight:700;text-transform:uppercase;color:#d0c5af;opacity:0.7;" class="hover:opacity-100 hover:text-primary transition-opacity">About</a>
+      <a href="#contact" style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.14em;font-weight:700;text-transform:uppercase;color:#d0c5af;opacity:0.7;" class="hover:opacity-100 hover:text-primary transition-opacity">Contact</a>
+    </nav>
+    <p style="font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:0.1em;color:#d0c5af;opacity:0.4;text-transform:uppercase;">© 2025 PerformWell Coaching. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // ── Mobile nav toggle ──
+  const toggle = document.getElementById('nav-toggle');
+  const menu   = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', () => menu.classList.toggle('open'));
+  function closeMobileMenu() { menu.classList.remove('open'); }
+
+  // ── Scroll reveal ──
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => io.observe(el));
+
+  // ── Marquee: duplicate content for seamless loop ──
+  const track    = document.querySelector('.marquee-track');
+  const template = document.getElementById('marquee-content');
+  const copy1    = document.importNode(template.content, true);
+  const copy2    = document.importNode(template.content, true);
+  track.appendChild(copy1);
+  track.appendChild(copy2);
+  // Adjust animation duration based on content width
+  track.style.animationDuration = '35s';
+
+  // ── Micro-interactions ──
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mousedown', () => { el.style.transform = 'scale(0.97)'; });
+    el.addEventListener('mouseup',   () => { el.style.transform = ''; });
+    el.addEventListener('mouseleave',() => { el.style.transform = ''; });
+  });
+
+  // ── Shrink nav on scroll ──
+  window.addEventListener('scroll', () => {
+    const nb = document.getElementById('navbar');
+    if (window.scrollY > 60) {
+      nb.style.borderBottomColor = 'rgba(77,70,53,0.3)';
+    } else {
+      nb.style.borderBottomColor = 'rgba(255,255,255,0.05)';
+    }
+  }, { passive: true });
+</script>
