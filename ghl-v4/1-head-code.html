@@ -123,5 +123,18 @@ tailwind.config = {
   /* Trustpilot stars */
   .tp-star { width: 18px; height: 18px; background: #00b67a; display: inline-grid; place-items: center; }
   .tp-star svg { width: 13px; height: 13px; fill: #fff; }
+
+  /* Prevent FOUC - set critical colours before Tailwind loads */
+  body { background:#121414 !important; color:#e2e2e2 !important; }
+  header { background:rgba(18,20,20,.97) !important; }
+  .reveal { opacity:0; }
+  
+  /* Mobile font sizes */
+  @media (max-width: 768px) {
+    p { font-size: 15px !important; line-height: 1.75 !important; }
+    .svc-p { font-size: 14px !important; }
+    .proc-p { font-size: 14px !important; }
+    .ci-v { font-size: 15px !important; }
+  }
 </style>
 </head>
